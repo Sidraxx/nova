@@ -1,0 +1,811 @@
+﻿:root {
+  /* Palette de couleurs principales - Thème naturel */
+  --beige: #F1F1D3;           /* Couleur douce pour les backgrounds secondaires */
+  --vert-beige: #E3EBD0;      /* Transition entre beige et vert */
+  --vert-clair: #C7DDC5;      /* Vert pastel pour les éléments subtils */
+  --vert: #9FCDA8;            /* Vert principal pour les accents */
+  --turquoise: #7DC2A5;       /* Couleur complémentaire pour la diversité */
+
+  /* Couleurs système */
+  --blanc: #ffffff;           /* Blanc pur pour les textes et backgrounds */
+  --noir: #000000;            /* Noir pour les textes principaux */
+
+  /* Couleurs fonctionnelles */
+  --primary: #8CFF2E;         /* Couleur primaire - Vert fluo pour les CTA */
+  --background: #050505;      /* Background principal - Noir profond */
+
+  /* Interface utilisateur - Niveaux de gris */
+  --UI-1: #0D0D0D;           /* Background le plus sombre */
+  --UI-2: #171717;           /* Background intermédiaire */
+  --UI-3: #2F2F2F;           /* Background le plus clair */
+  --Border: #F8F8FA;         /* Couleur des bordures */
+}
+
+/*
+   RESET CSS - Normalisation des styles par défaut
+   ===============================================
+   Supprime les marges/paddings par défaut et définit box-sizing
+*/
+* {
+    margin: 0;                 /* Supprime toutes les marges par défaut */
+    padding: 0;                /* Supprime tous les paddings par défaut */
+    box-sizing: border-box;    /* Inclut padding et border dans la largeur */
+}
+
+/* Reset spécifique pour html et body */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+   HEADER - Navigation principale
+   =============================
+   Styles pour le header sticky avec effet de transparence et blur.
+   Optimisé pour la lisibilité sur tous les backgrounds.
+*/
+header {
+    width: 100%;                    /* Largeur complète */
+    position: sticky;               /* Reste fixé en haut lors du scroll */
+    top: 0;                        /* Position au sommet de la page */
+    z-index: 1000;                 /* Au-dessus de tous les autres éléments */
+    font-family: 'Manrope', sans-serif; /* Police cohérente avec le design */
+    background: rgba(13, 13, 13, 0.8);  /* Background semi-transparent */
+    backdrop-filter: blur(20px);    /* Effet de flou sur le contenu en arrière-plan */
+    -webkit-backdrop-filter: blur(20px); /* Support Safari */
+}
+
+/* Logo de l'entreprise */
+.logo {
+    height: 50px;                  /* Hauteur fixe pour cohérence */
+}
+
+/*
+   NAVIGATION - Menu principal
+   ==========================
+   Styles pour la liste de navigation horizontale
+*/
+.menu {
+    list-style: none;              /* Supprime les puces de liste */
+    display: flex;                 /* Layout flexbox pour alignement horizontal */
+    flex-wrap: wrap;               /* Permet le retour à la ligne sur mobile */
+    gap: 25px;                     /* Espacement uniforme entre les liens */
+    padding-left: 0;               /* Supprime le padding par défaut des listes */
+}
+
+/* Liens de navigation */
+.menu a {
+    text-decoration: none;         /* Supprime le soulignement par défaut */
+    color: var(--blanc);           /* Couleur blanche pour contraste */
+    font-weight: 16;               /* Poids de police pour lisibilité */
+    transition: color 0.3s;        /* Animation douce au survol */
+}
+
+/* Effet de survol sur les liens */
+.menu a:hover {
+    color: var(--primary);         /* Change vers la couleur primaire au survol */
+}
+
+/*
+   STYLES DE BASE - Body et typographie
+   ===================================
+   Définit l'apparence générale de la page et la hiérarchie typographique
+*/
+body {
+  background-color: var(--background); /* Background sombre principal */
+}
+
+/* Reset des marges pour tous les éléments de texte */
+h1, h2, h3, h4, p {
+  margin: 0;                       /* Supprime les marges par défaut */
+  padding: 0;                      /* Supprime les paddings par défaut */
+}
+
+/*
+   HIÉRARCHIE TYPOGRAPHIQUE
+   ========================
+   Définit les styles pour chaque niveau de titre selon l'importance
+*/
+
+/* Titre principal H1 - Hero sections */
+h1 {
+    font-family: 'Manrope', sans-serif; /* Police principale */
+    font-size: 64px;                    /* Taille importante pour impact visuel */
+    font-weight: 400;                   /* Poids normal pour élégance */
+    flex-shrink: 0;                     /* Empêche la réduction dans flexbox */
+    color: var(--blanc);                /* Couleur blanche pour contraste */
+}
+
+/* Titre de section H2 */
+h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 42px;                     /* Taille intermédiaire */
+  font-weight: 400;
+  flex-shrink: 0;
+  color: var(--blanc);
+}
+
+/* Sous-titres H3 */
+h3, .h3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 32px;                     /* Taille pour sous-sections */
+  font-weight: 400;
+  color: var(--blanc);
+}
+
+/* Titres de composants H4 */
+h4 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;                     /* Taille plus petite pour détails */
+  font-weight: 600;                    /* Poids plus lourd pour distinction */
+  color: var(--blanc);
+}
+
+/* Liens génériques */
+a {
+    display: inline-block;             /* Permet les transformations CSS */
+    color: var(--noir);                /* Couleur par défaut */
+    text-decoration: none;
+}
+p, span {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: lighter;
+  color: var(--blanc);
+}
+
+.hero {
+  background-color: var(--background);
+  color: var(--blanc);
+}
+
+.hero-tag {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  margin-top: 0;
+  margin-left: 0px;
+  margin-right: auto;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: var(--noir);
+  color: var(--primary);
+  display: inline-block;
+  width: fit-content;
+  box-shadow:
+    0 4px 8px rgba(140, 255, 46, 0.10),
+    0 8px 16px rgba(140, 255, 46, 0.1),
+    0 0 20px rgba(140, 255, 46, 0.08);
+}
+
+.hero-title {
+  font-size: 64px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.hero-text {
+  font-size: 18px;
+  font-weight: lighter;
+  margin-bottom: 40px;
+}
+
+.btn {
+  background-color: var(--primary);
+  color: var(--background);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 23px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(140, 255, 46, 0.3), 0 4px 15px rgba(140, 255, 46, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+    z-index: 1;
+}
+
+.btn:hover {
+  background-color: var(--primary);
+  color: var(--background);
+  box-shadow: none;
+}
+
+.btn1 {
+  background-color: var(--UI-2);
+  color: var(--blanc);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 23px;
+  font-size: 18px;
+  font-weight: 200;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+
+.btn1:hover {
+  background-color: var(--UI-3);
+  color: var(--blanc);
+  box-shadow: none;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 520px;
+  padding: 20px;
+}
+
+.mechanisme {
+  background-color: var(--background);
+  color: var(--blanc);
+}
+
+.mechanisme-title {
+  font-size: 42px;
+  font-weight: 1200;
+  margin-bottom: 20px;
+}
+
+.card-mechanism {
+  width: 100%;
+}
+
+.card-mechanism .card {
+  background-color: var(--UI-1);
+  color: var(--blanc);
+  border-radius: 25px;
+  padding: 24px;
+  text-align: left;
+  height: 100%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-mechanism .card img {
+  width: 75%;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--background);
+  border-radius: 25px;
+}
+
+.card-step {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: auto;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: var(--noir);
+  color: var(--primary);
+  display: block;
+  width: fit-content;
+  box-shadow:
+    0 4px 8px rgba(140, 255, 46, 0.10),
+    0 8px 16px rgba(140, 255, 46, 0.1),
+    0 0 20px rgba(140, 255, 46, 0.08);
+}
+.card-mechanism .card h3 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: var(--blanc);
+}
+
+.card-mechanism .card p {
+  font-size: 16px;
+}
+
+.feature-tag{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-top: 0;
+    margin-left: 0;
+    text-align: center;
+    margin-right: auto;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: var(--noir);
+    color: var(--primary);
+    display: inline-block;
+    width: fit-content;
+    box-shadow:
+            0 4px 8px rgba(140, 255, 46, 0.10),
+            0 8px 16px rgba(140, 255, 46, 0.1),
+            0 0 20px rgba(140, 255, 46, 0.08);
+}
+.feature-card{
+    background-color: var(--UI-1);
+    color: var(--blanc);
+    border-radius: 25px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feature-card .card-title,
+.feature-card .card-text{
+    color: var(--blanc);
+}
+
+/* Icons for Features (section2) */
+#section2 .card-step{
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 12px;
+  background: var(--UI-2);
+  display: inline-block;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25), inset 0 0 0 1px rgba(255,255,255,0.06);
+  text-indent: -9999px; /* hide placeholder text */
+  overflow: hidden;
+}
+
+#section2 .card-step::before{
+  content: "";
+  display: block;
+  width: 24px; height: 24px;
+  margin: 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* Bank */
+#section2 .row.g-4 > div:nth-child(1) .card-step::before{
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%238CFF2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8 L12 4 L21 8 Z"/><path d="M5 10 V17 M9 10 V17 M13 10 V17 M17 10 V17"/><path d="M3 17 H21"/></svg>');
+}
+
+/* Target */
+#section2 .row.g-4 > div:nth-child(2) .card-step::before{
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%238CFF2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>');
+}
+
+/* Folder */
+#section2 .row.g-4 > div:nth-child(3) .card-step::before{
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%238CFF2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7 H9 L11 9 H21 V17 a2 2 0 0 1 -2 2 H5 a2 2 0 0 1 -2 -2 V7 Z"/></svg>');
+}
+
+/* Calendar */
+#section2 .row.g-4 > div:nth-child(4) .card-step::before{
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%238CFF2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3 V7 M16 3 V7"/><path d="M3 10 H21"/></svg>');
+}
+
+/* Timer */
+#section2 .row.g-4 > div:nth-child(5) .card-step::before{
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%238CFF2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3 H15"/><circle cx="12" cy="13" r="7"/><path d="M12 13 V9 M12 13 L15 11"/></svg>');
+}
+
+/* Lock */
+#section2 .row.g-4 > div:nth-child(6) .card-step::before{
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%238CFF2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11 V8 a4 4 0 0 1 8 0 V11"/></svg>');
+}
+
+/* Force 3 cards per row on desktop (XL and up) */
+@media (min-width: 1200px) {
+  #section2 .col-xl-3 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--noir);
+    color: var(--blanc);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+footer .logo {
+    max-width: 120px;
+}
+
+.footer-content .infos p {
+    font-size: 14px;
+    margin: 0;
+    color: var(--blanc);
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--blanc);
+
+}
+
+.footer-menu li:hover {
+    text-decoration: underline;
+}
+.col-md-8 > .row {
+    justify-content: flex-end; /* pousse les colonnes vers la droite */
+    display: flex;
+}
+
+#question-1{
+  background-color: var(--background);
+}
+.vos-questions{
+  text-align: center;
+  margin: 0px;
+  font-size: 30px;
+}
+.vos-questions p{
+  font-size: 14px;
+  margin: 10px;
+}
+.vos-questions button{
+  background-color: var(--primary);
+  color: var(--background);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 23px;
+  font-size: 18px;
+  font-weight: 200;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(140, 255, 46, 0.3), 0 4px 15px rgba(140, 255, 46, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+    z-index: 1;
+}
+.continur{
+  margin: 10px;
+  padding:0PX;
+}
+.continur p{
+  text-align: center;
+  font-size: 15px;
+}
+.continur div {
+  margin: 30px;
+  padding: 0px;
+  background-color: var(--UI-1);
+  border-radius: 30px;
+  align-items: center;
+  width: 100%;
+  height: 40%;
+
+}
+.continur h4{
+  text-align: center;
+  font-weight:bold ;
+  font-size: 20px;
+  margin: 20px;
+  padding: 0px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.overlay.active {
+    display: flex;
+}
+
+/* --- Fenêtre popup --- */
+.popup {
+    background: var(--UI-1);
+    padding: 20px;
+    border-radius: 15px;
+    width: 350px;
+    max-width: 90%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s ease;
+    position: relative;
+    z-index: 10000; /* <-- au-dessus de l’overlay */
+}
+
+/* Animation d’apparition */
+@keyframes fadeIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+/* Bouton fermer */
+.close-btn {
+    position: absolute;
+    top: 10px; right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: var(--blanc);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid var(--UI-2);
+    border-radius: 5px;
+}
+
+.blog{
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.blog p{
+  font-size: 19px;
+  margin: 30px;
+  padding: 0px;
+}
+.img-1{
+  max-width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+.btm{
+  background-color: var(--primary);
+  color: var(--background);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 23px;
+  font-size: 18px;
+  font-weight: 200;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(140, 255, 46, 0.3), 0 4px 15px rgba(140, 255, 46, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+    z-index: 1;
+
+}
+.top-title-pricing {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 16px;
+  color: var(--primary);
+  text-align: center;
+}
+
+.title-pricing {
+  font-size: 42px;
+  font-weight: 1200;
+  margin-bottom: 20px;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: auto;
+  padding: 8px 16px;
+  color: var(--blanc);
+  display: block;
+  text-align: center;
+}
+
+.plan-text {
+  color: var(--blanc);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.plan-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.plan-pro {
+  background-color: var(--UI-1);
+  color: var(--blanc);
+  border: 4px solid var(--UI-2);
+  border-radius: 25px;
+  padding: 30px;
+  gap: 20px;
+}
+
+.plan-title {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: var(--blanc);
+}
+
+.plan-price {
+  font-size: 42px;
+  font-weight: 1200;
+  margin-bottom: 20px;
+  color: var(--blanc);
+
+}
+.plan-description {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: var(--blanc);
+}
+
+.btn-pro {
+  background-color: var(--primary);
+  color: var(--background);
+  padding: 12px 40px;
+  border: none;
+  border-radius: 23px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(140, 255, 46, 0.3), 0 4px 15px rgba(140, 255, 46, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin-bottom: 20px;
+}
+
+.btn-pro:hover {
+  background-color: var(--primary);
+  color: var(--background);
+  box-shadow: none;
+}
+
+.btn-starter {
+  background-color: var(--UI-2);
+  color: var(--blanc);
+  padding: 12px 40px;
+  border: none;
+  border-radius: 23px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin-bottom: 20px;
+}
+
+.btn-starter:hover {
+  background-color: var(--UI-3);
+  color: var(--blanc);
+  box-shadow: none;
+}
+
+.plan-features {
+  padding-left: 0;
+  margin-top: auto;
+  margin-bottom: 0;
+  color: var(--blanc);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plan-starter {
+  background-color: var(--UI-1);
+  color: var(--blanc);
+  border-radius: 25px;
+  padding: 30px;
+  gap: 20px;
+}
+
+/* FAQ Styles */
+.faq-container {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.faq-title {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 32px;
+  text-align: center;
+  color: var(--blanc);
+}
+
+.faq-items {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.faq-item {
+  background-color: var(--UI-1);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.faq-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--blanc);
+  font-family: 'Manrope', sans-serif;
+}
+
+.faq-button:focus {
+  outline: none;
+}
+
+.faq-question {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--blanc);
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.faq-content {
+  color: var(--blanc);
+  opacity: 0.8;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.5s ease;
+}
+
+.faq-content p {
+  padding: 16px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.faq-content.expanded {
+  max-height: 200px;
+}
+
+.hidden {
+  display: none;
+}
+
+.cookie-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: var(--UI-1);
+    border-radius: 15px;
+    padding: 20px;
+    color: var(--blanc);
+    display: none;
+    z-index: 9999;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}

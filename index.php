@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nova</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+
+<header class="py-3">
+    <div class="container">
+        <div class="row align-items-center gy-3">
+
+            <div class="col-12 col-md-3 text-center text-md-start">
+                <a href="index.php" title="logo"> <img class="logo" src="asset/img/logo.png" alt="Logo Nova - Plateforme de gestion financière"></a>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <nav>
+                    <ul class="menu d-flex flex-wrap justify-content-center gap-3 mb-0">
+                        <li><a href="#section1" class="nav-link">Comment ca marche</a></li>
+                        <li><a href="#section2" class="nav-link">Fonctionnalites</a></li>
+                        <li><a href="#question-1" class="nav-link">FAQ</a></li>
+                        <li><a href="#section3" class="nav-link">Prix</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <div class="d-flex justify-content-center justify-content-md-end gap-3 flex-wrap">
+                    <button class="btn1" onclick="openPopup()">Contact</button>
+                    <a href="html/auth.php" class="btn">Connexion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="overlay" id="contactPopup" onclick="closePopup(event)">
+    <div class="popup" onclick="event.stopPropagation()">
+        <button class="close-btn" onclick="closePopup()">Fermer</button>
+        <h3>Contact</h3>
+
+        <form action="html/contact_form.php" method="POST">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit" class="btn">Envoyer</button>
+        </form>
+
+    </div>
+</div>
+
+<main>
+
+    <section id="accueil" class="hero py-5">
+        <div class="container">
+            <div class="row align-items-center justify-content-center gy-5">
+
+                <div class="col-12 col-lg-6 text-center text-lg-start">
+                    <p class="hero-tag">All-in-One Finance Toolkit</p>
+                    <h1 class="hero-title">Prenez le controle de vos finances avec clarte</h1>
+                    <p class="hero-text">Toutes vos informations financieres, enfin reunies en un seul endroit : suivez vos revenus, vos depenses et atteignez vos objectifs en toute simplicite.</p>
+
+                    <div class="d-flex justify-content-center justify-content-lg-start">
+                        <a href="html/auth.php" class="btn">Essayer maintenant</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6 text-center">
+                    <img id="anim1" class="hero-img img-fluid" src="asset/img/hero.avif" alt="Interface de gestion financière Nova">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section1" class="py-5">
+        <div class="container">
+
+            <div class="row justify-content-center text-center mb-4">
+                <div class="col-12 col-lg-6">
+                    <h2 class="mechanisme-title">Comment ca marche</h2>
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-stretch card-mechanism">
+
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card h-100">
+                        <img src="asset/img/card.avif" alt="Étape 1 - Configuration initiale">
+                        <p class="card-step">Etape 1</p>
+                        <h3 class="card-title">Titre</h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card h-100">
+                        <img src="asset/img/card2.avif" alt="Étape 2 - Utilisation de la plateforme">
+                        <p class="card-step">Etape 2</p>
+                        <h3 class="card-title">Titre</h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card h-100">
+                        <img src="asset/img/card3.avif" alt="Étape 3 - Résultats et suivi">
+                        <p class="card-step">Etape 3</p>
+                        <h3 class="card-title">Titre</h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section2" class="mechanisme py-5">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-4">
+                <div class="col-12 col-lg-8">
+                    <p class="feature-tag">Feature</p>
+                    <h2 class="mechanisme-title">Designed for clarity, built for better money decisions</h2>
+                </div>
+            </div>
+            <div class="row g-4 align-items-stretch">
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <div class="feature-card h-100">
+                        <p class="card-step">UwU</p>
+                        <h5 class="card-title">Synchronisation multi-comptes</h5>
+                        <p class="card-text">Connectez et suivez tous vos comptes bancaires en un seul endroit.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <div class="feature-card h-100">
+                        <p class="card-step">UwU</p>
+                        <h5 class="card-title">Suivi des objectifs</h5>
+                        <p class="card-text">Visualisez les progrès vers les objectifs d’économies en temps réel.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <div class="feature-card h-100">
+                        <p class="card-step">UwU</p>
+                        <h5 class="card-title">Catégories personnalisées</h5>
+                        <p class="card-text">Créez et organisez vos dépenses — et non celles de la banque.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <div class="feature-card h-100">
+                        <p class="card-step">UwU</p>
+                        <h5 class="card-title">Rapports hebdomadaires</h5>
+                        <p class="card-text">Obtenez un instantané de vos finances livré dans votre boîte de réception.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <div class="feature-card h-100">
+                        <p class="card-step">UwU</p>
+                        <h5 class="card-title">Limites de dépenses</h5>
+                        <p class="card-text">Définissez des plafonds mensuels et soyez averti lorsque vous êtes proche.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <div class="feature-card h-100">
+                        <p class="card-step">UwU</p>
+                        <h5 class="card-title">Sécurisé & privé</h5>
+                        <p class="card-text">Vos données sont cryptées et jamais partagées.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="question-1" class="py-5">
+        <div class="container">
+            <div class="row gy-5 align-items-start">
+                <div class="col-12 col-lg-5">
+                    <div class="vos-questions text-center text-lg-start">
+                        <h1>vous avez des questions ?<br>nous avons des reponses.</h1>
+                        <p>contacter nous ici pour toute autre question.</p>
+                        <button class="btn1" onclick="openPopup()">contactez-nous</button>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-7">
+                    <div class="faq-container">
+                        <div class="faq-items">
+                            <div class="faq-item">
+                                <button
+                                    class="faq-button"
+                                    onclick="toggleFaqItem(1)"
+                                    aria-expanded="false"
+                                    aria-controls="faq-content-1"
+                                    id="faq-button-1"
+                                >
+                                    <span class="faq-question">
+                                        Pour quel type d'entreprise ce modele est-il concu ?
+                                    </span>
+                                    <svg
+                                        id="faq-icon-plus-1"
+                                        class="faq-icon"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"/>
+                                    </svg>
+                                    <svg
+                                        id="faq-icon-minus-1"
+                                        class="faq-icon hidden"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"/>
+                                    </svg>
+                                </button>
+                                <div
+                                    id="faq-content-1"
+                                    class="faq-content"
+                                    role="region"
+                                    aria-labelledby="faq-button-1"
+                                >
+                                    <p>Nova est concu pour les outils SaaS, les tableaux de bord, les plateformes fintech ou tout produit numerique necessitant une page d'atterrissage moderne et axee sur la conversion. Il est entierement adaptable a un eventail de services web.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button
+                                    class="faq-button"
+                                    onclick="toggleFaqItem(2)"
+                                    aria-expanded="false"
+                                    aria-controls="faq-content-2"
+                                    id="faq-button-2"
+                                >
+                                    <span class="faq-question">Le modele est-il adapte aux mobiles et reactif ?</span>
+                                    <svg
+                                        id="faq-icon-plus-2"
+                                        class="faq-icon"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"/>
+                                    </svg>
+                                    <svg
+                                        id="faq-icon-minus-2"
+                                        class="faq-icon hidden"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"/>
+                                    </svg>
+                                </button>
+                                <div
+                                    id="faq-content-2"
+                                    class="faq-content"
+                                    role="region"
+                                    aria-labelledby="faq-button-2"
+                                >
+                                    <p>Absolument. La mise en page s'adapte parfaitement a toutes les tailles d'ecran, y compris les ordinateurs de bureau, les tablettes et les smartphones. Chaque section est concue pour offrir une experience transparente sur tous les appareils.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button
+                                    class="faq-button"
+                                    onclick="toggleFaqItem(3)"
+                                    aria-expanded="false"
+                                    aria-controls="faq-content-3"
+                                    id="faq-button-3"
+                                >
+                                    <span class="faq-question">Puis-je utiliser ce modele sans competences en codage ?</span>
+                                    <svg
+                                        id="faq-icon-plus-3"
+                                        class="faq-icon"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"/>
+                                    </svg>
+                                    <svg
+                                        id="faq-icon-minus-3"
+                                        class="faq-icon hidden"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"/>
+                                    </svg>
+                                </button>
+                                <div
+                                    id="faq-content-3"
+                                    class="faq-content"
+                                    role="region"
+                                    aria-labelledby="faq-button-3"
+                                >
+                                    <p>Oui, le modele est entierement modifiable avec des outils de glisser-deposer. Aucune connaissance en codage n'est requise pour mettre a jour le texte, echanger des images ou ajuster les mises en page.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button
+                                    class="faq-button"
+                                    onclick="toggleFaqItem(4)"
+                                    aria-expanded="false"
+                                    aria-controls="faq-content-4"
+                                    id="faq-button-4"
+                                >
+                                    <span class="faq-question">Aurais-je acces aux futures mises a jour ?</span>
+                                    <svg
+                                        id="faq-icon-plus-4"
+                                        class="faq-icon"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"/>
+                                    </svg>
+                                    <svg
+                                        id="faq-icon-minus-4"
+                                        class="faq-icon hidden"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"/>
+                                    </svg>
+                                </button>
+                                <div
+                                    id="faq-content-4"
+                                    class="faq-content"
+                                    role="region"
+                                    aria-labelledby="faq-button-4"
+                                >
+                                    <p>Oui. Une fois l'achat effectue, vous recevrez automatiquement toutes les ameliorations ou optimisations futures que nous apporterons au modele. Votre version reste a jour avec les meilleures pratiques.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button
+                                    class="faq-button"
+                                    onclick="toggleFaqItem(5)"
+                                    aria-expanded="false"
+                                    aria-controls="faq-content-5"
+                                    id="faq-button-5"
+                                >
+                                    <span class="faq-question">Puis-je utiliser ce modele pour des projets commerciaux ?</span>
+                                    <svg
+                                        id="faq-icon-plus-5"
+                                        class="faq-icon"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"/>
+                                    </svg>
+                                    <svg
+                                        id="faq-icon-minus-5"
+                                        class="faq-icon hidden"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"/>
+                                    </svg>
+                                </button>
+                                <div
+                                    id="faq-content-5"
+                                    class="faq-content"
+                                    role="region"
+                                    aria-labelledby="faq-button-5"
+                                >
+                                    <p>Sans faute. Nova est concede sous licence pour un usage personnel et commercial, ce qui vous permet de creer des sites Web clients ou de lancer votre propre produit sans aucun probleme de licence.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button
+                                    class="faq-button"
+                                    onclick="toggleFaqItem(6)"
+                                    aria-expanded="false"
+                                    aria-controls="faq-content-6"
+                                    id="faq-button-6"
+                                >
+                                    <span class="faq-question">Comment puis-je obtenir de l'aide si je rencontre des problemes ?</span>
+                                    <svg
+                                        id="faq-icon-plus-6"
+                                        class="faq-icon"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"/>
+                                    </svg>
+                                    <svg
+                                        id="faq-icon-minus-6"
+                                        class="faq-icon hidden"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"/>
+                                    </svg>
+                                </button>
+                                <div
+                                    id="faq-content-6"
+                                    class="faq-content"
+                                    role="region"
+                                    aria-labelledby="faq-button-6"
+                                >
+                                    <p>Nous sommes la pour vous aider. Si vous avez des questions, vous pouvez nous joindre directement par notre formulaire de contact. Nous repondons generalement dans les 24 heures.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section3" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-4">
+                <div class="col-12 col-lg-6">
+                    <p class="top-title-pricing">Prix</p>
+                    <h2 class="title-pricing">Plans simples</h2>
+                    <p class="plan-text">Tarification simple et sans frais caches. Tout ce dont vous avez besoin pour mieux gerer votre argent.</p>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center align-items-stretch">
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <div class="plan-starter d-flex flex-column h-100">
+                        <h4 class="plan-title">Starter</h4>
+                        <div class="d-flex align-items-baseline gap-2">
+                            <h2 class="plan-price">29 EUR</h2><p class="plan-duration">/mois</p>
+                        </div>
+                        <p class="plan-description">Ideal pour les freelances qui souhaitent avoir un controle total sur leurs finances personnelles.</p>
+                        <button class="btn-starter">Obtenez Starter</button>
+                        <ul class="plan-features list-unstyled ps-0 mt-auto mb-0">
+                            <li>Suivre les revenus et les depenses</li>
+                            <li>Connectez jusqu'a 2 comptes</li>
+                            <li>Rapports mensuels</li>
+                            <li>Alertes intelligentes</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <div class="plan-pro d-flex flex-column h-100">
+                        <h4 class="plan-title">Pro</h4>
+                        <div class="d-flex align-items-baseline gap-2">
+                            <h2 class="plan-price">49 EUR</h2><p class="plan-duration">/mois</p>
+                        </div>
+                        <p class="plan-description">Des outils avances pour gerer votre argent plus intelligemment et debloquer des informations puissantes.</p>
+                        <button class="btn-pro">Obtenez Pro</button>
+                        <ul class="plan-features list-unstyled ps-0 mt-auto mb-0">
+                            <li>Comptes illimites</li>
+                            <li>Informations sur les depenses en IA</li>
+                            <li>Alertes personnalisees</li>
+                            <li>Rapports avances</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog py-5">
+        <div class="container">
+            <div class="row align-items-center gy-4">
+                <div class="col-12 col-md-6 text-center text-md-start">
+                     <h3>Pret a gerer votre argent <br> plus intelligemment ?</h3>
+                     <p>Commencez votre parcours vers des depenses plus intelligentes et une meilleure epargne - cela ne prend que 2 minutes.</p>
+                     <button class="btn">obtenez 14 jour d'essai gratuit</button>
+                </div>
+                <div class="col-12 col-md-6 text-center">
+                    <img class="img-1 img-fluid" src="asset/img/femme.webp" alt="femme">
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="py-5">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-12 col-md-4">
+                <div class="footer-content">
+                    <img src="asset/img/logo.png" alt="Reservetel Logo" class="logo">
+                    <div class="infos">
+                        <p> © 2025 - Tous droits reserves - Politique de confidentialite </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-8">
+                <div class="row gy-4 justify-content-end">
+                    <div class="col-12 col-sm-6">
+                        <div class="footer-links">
+                            <p><strong>Information</strong></p>
+                            <ul class="footer-menu">
+                                <li onclick="openPopup()">Contact</li>
+                                <li><a href="html/PDC.php" style="color: #ffffff">Politique de Confidentialité</a> </li>
+                                <li>Blog</li>
+                                <li>Other Information</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="footer-links">
+                            <p><strong>Navigation</strong></p>
+                            <ul class="footer-menu">
+                                <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                                <li><a href="#section1" class="nav-link">Comment ca marche</a></li>
+                                <li><a href="#section2" class="nav-link">Fonctionnalites</a></li>
+                                <li><a href="#question-1" class="nav-link">FAQ</a></li>
+                                <li><a href="#section3" class="nav-link">Prix</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<div id="cookie-popup" class="cookie-popup">
+    <div class="cookie-box">
+        <p>Ce site utilise des cookies pour améliorer votre expérience.</p>
+        <div class="d-flex gap-2 mt-3">
+            <button class="btn" id="acceptCookies">Accepter</button>
+            <button class="btn1" id="declineCookies">Refuser</button>
+        </div>
+    </div>
+</div>
+<script src="js/cookies.js"></script>
+</body>
+</html>
+
